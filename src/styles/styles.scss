@@ -1,0 +1,290 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1rem;
+}
+
+input { 
+    margin-bottom: 5px;
+    outline: none;
+}
+
+#app {
+    background-color: #333333;
+    .app__title {
+        text-align: center;
+    }
+    .container {
+        max-width: 300px;
+        margin: 0 auto;
+        background-color: white;
+        .component__title {
+            margin: 10px;
+        }
+        .form__submit {
+            display: flex;
+            flex-direction: row-reverse;
+            align-items: baseline;
+            p {
+                font-family: monospace;
+            }
+        }
+    }
+    #submit-button {
+        display: flex;
+        margin: 0 auto;
+        background-color: honeydew;
+        margin-top: 10px;
+        border: 2px solid black;
+        padding: 5px 15px;
+        font-family: cursive;
+        cursor: pointer;
+    }
+    #submit-button:hover {
+        color: honeydew;
+        background-color: #333;
+        transition: all 0.3s ease;
+    }
+}
+
+// Main Block
+.main__block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    .main__gender {
+        margin-top: 10px;
+    }
+}
+
+#sms-checkbox {
+    text-align: center;
+}
+
+// Select
+._select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    outline: none;
+    border: none;
+    color: #333;
+    width: 10rem;
+    cursor: pointer;
+    padding: 1rem;
+}
+
+.main__select {
+    margin: 1rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.main__select::after {
+    content: "\25BC";
+    position: absolute;
+    background:#000000;
+    top: 0;
+    right: 0;
+    padding: 1rem;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    color: white;
+}
+
+.main__select:hover::after {
+    background: white;
+    color: #000000;
+}
+
+// Vuelidate styles
+.form__label {
+    display: block;
+    font-size: 0.8125rem;
+    color: #4b6372;
+    margin-bottom: 0.3125rem;
+    text-align: initial;
+}
+
+.form__input {
+    border: 1px solid #E8E8E8;
+    border-radius: 5px;
+    background: #fff;
+    transition: border .1s ease;
+    width: 100%;
+    padding: 0 0.8125rem;
+    font-size: 0.875rem;
+    font-weight: 300;
+    color: #374853;
+    line-height: 2.375rem;
+    min-height: 2.375rem;
+    position: relative;
+}
+
+.form-group--error {
+    color: #f04124;
+    animation-fill-mode: forwards;
+    animation-duration: .6s;
+    animation-timing-function: ease-in-out;
+}
+
+.error {
+    display: block;
+    color: #f57f6c;
+    font-size: 0.75rem;
+    line-height: 1;
+}
+
+.form-group--error .form__label, .form-group--error .form__label--inline {
+    color: #f04124;
+}
+
+.form-group--error input, .form-group--error input:focus, .form-group--error input:hover {
+    border-color: #f79483;
+}
+
+// Multiselect styles
+.checkbox-container {
+    margin: 10px 10px;
+}
+
+.input-title {
+    clear: both;
+    font-size: 16px;
+    color: #000000;
+    font-weight: 300;
+}
+
+.main__clients {
+    display: flex;
+}
+
+/* Styling Checkbox Starts */
+.checkbox-label {
+    display: block;
+    position: relative;
+    margin: auto;
+    cursor: pointer;
+    font-size: 22px;
+    line-height: 24px;
+    height: 24px;
+    width: 24px;
+    clear: both;
+}
+
+.checkbox-label { 
+    input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    }
+}
+
+.checkbox-label {
+    .checkbox-custom {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 24px;
+    width: 24px;
+    background-color: transparent;
+    border-radius: 5px;
+    transition: all 0.3s ease-out;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -ms-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    border: 2px solid #000000;
+    }
+}
+
+
+.checkbox-label input:checked ~ .checkbox-custom {
+    background-color: #000000;
+    border-radius: 5px;
+    -webkit-transform: rotate(0deg) scale(1);
+    -ms-transform: rotate(0deg) scale(1);
+    transform: rotate(0deg) scale(1);
+    opacity:1;
+    border: 2px solid #000000;
+}
+
+
+.checkbox-label {
+    .checkbox-custom::after {
+    position: absolute;
+    content: "";
+    left: 12px;
+    top: 12px;
+    height: 0px;
+    width: 0px;
+    border-radius: 5px;
+    border: solid #ffffff;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(0deg) scale(0);
+    -ms-transform: rotate(0deg) scale(0);
+    transform: rotate(0deg) scale(0);
+    opacity:1;
+    transition: all 0.3s ease-out;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -ms-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    }
+}
+
+.checkbox-label input:checked ~ .checkbox-custom::after {
+  -webkit-transform: rotate(45deg) scale(1);
+  -ms-transform: rotate(45deg) scale(1);
+  transform: rotate(45deg) scale(1);
+  opacity:1;
+  left: 8px;
+  top: 3px;
+  width: 6px;
+  height: 12px;
+  border: solid #ffffff;
+  border-width: 0 2px 2px 0;
+  background-color: transparent;
+  border-radius: 0;
+}
+
+/* For Ripple Effect */
+.checkbox-label .checkbox-custom::before {
+    position: absolute;
+    content: "";
+    left: 10px;
+    top: 10px;
+    width: 0px;
+    height: 0px;
+    border-radius: 5px;
+    border: 2px solid #FFFFFF;
+    -webkit-transform: scale(0);
+    -ms-transform: scale(0);
+    transform: scale(0);
+}
+
+.checkbox-label input:checked ~ .checkbox-custom::before {
+    left: -3px;
+    top: -3px;
+    width: 24px;
+    height: 24px;
+    border-radius: 5px;
+    -webkit-transform: scale(3);
+    -ms-transform: scale(3);
+    transform: scale(3);
+    opacity:0;
+    z-index: 999;
+    transition: all 0.3s ease-out;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -ms-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+}
+
+
